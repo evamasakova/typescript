@@ -1,0 +1,12 @@
+.carlink-wrapper{
+    border: 3px solid slateblue;
+    font-size: 25px;
+}
+.carlink-name{
+    border: 1px solid rgb(255, 22, 112);
+    font-size: larger;
+}
+.carlink-¨view{
+    border: 2px solid rgb(106, 0, 41);
+    text-decoration: wavy;
+}

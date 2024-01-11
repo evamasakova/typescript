@@ -1,20 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
+const carsController = require("../controllers/cars");
 
-/** 
+/**
  * returns all cars
  * URL: http://localhost:3000/cars
  * Method: GET
  */
-router.get('/', (req, res) => {
-    res.send({
-        msg: "Returning all cars"
-    })
-});
+router.get("/", carsController.getAllCars);
 
-
-/** 
+/**
  * returns one car by id
  * URL: http://localhost:3000/cars/iharikbkjkjoih565es51fes
  * aka: URL: http://localhost:3000/cars/id
@@ -23,51 +19,27 @@ router.get('/', (req, res) => {
  * req - pozadavek od uzivatele
  * res - odpoved od serveru
  */
-router.get('/:id', (req, res) => {
-    res.send({
-        msg: "Returning car",
-        id: req.params.id
-    })
-});
+router.get("/:id", carsController.getCarById);
 
-
-
-/** 
+/**
  * add a car
  * URL: http://localhost:3000/cars
  * Method: POST
  */
-router.post('/', (req, res) => {
-    res.send({
-        msg: "Adding a car"
-    })
-});
+router.post("/", carsController.createCar);
 
-
-/** 
+/**
  * update car
  * URL: http://localhost:3000/cars/id
  * Method: PUT
  */
-router.put('/:id', (req, res) => {
-    res.send({
-        msg: "Updating car by id",
-        id: req.params.id
-    })
-});
+router.put("/:id", carsController.updateCar);
 
-
-/** 
+/**
  * delete car
  * URL: http://localhost:3000/cars/id
  * Method: DELETE
  */
-router.delete('/:id', (req, res) => {
-    res.send({
-        msg: "Deleting car by id"
-    })
-});
-
-
+router.delete("/:id", carsController.deleteCar);
 
 module.exports = router;
